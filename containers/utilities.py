@@ -31,9 +31,7 @@ def solutions(container_types, system_load, containers=[]):
     :rtype: generator
     """
     container_load = sum(containers)
-    if container_load == system_load:
-        yield containers
-    elif container_load > system_load:
+    if container_load >= system_load:
         yield containers
     elif not len(container_types):
         # Ignore, there is no solution available
